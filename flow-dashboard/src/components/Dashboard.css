@@ -1,0 +1,127 @@
+.dashboard-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+/* Header & Stats */
+.dashboard-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.welcome-text {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.stats-bar {
+  display: flex;
+  gap: var(--spacing-lg);
+  align-items: center;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background-color: var(--bg-app); /* Or perhaps transparent? Looks like floating text/pills? NO, looks like simple text in the screenshot, maybe slight pill background? No, just icons and text. */
+  padding: 4px 0; 
+}
+
+/* Hero Card */
+.hero-card {
+  background-color: var(--bg-card);
+  border-radius: var(--radius-xl);
+  padding: 3rem;
+  margin-bottom: 3rem;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: #292524;
+  margin-bottom: var(--spacing-md);
+  line-height: 1.2;
+}
+
+.hero-strong {
+  font-weight: 600;
+}
+
+.hero-description {
+  font-size: 1rem;
+  color: #57534E;
+  margin-bottom: var(--spacing-xl);
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+.hero-strong-sans {
+  font-weight: 600;
+  color: #1C1917;
+}
+
+.hero-btn {
+  background-color: #1F2937;
+  color: #ffffff;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: opacity 0.2s;
+}
+
+.hero-btn:hover {
+  opacity: 0.9;
+}
+
+/* Timeline */
+.timeline-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.timeline-header {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: var(--spacing-md);
+}
+
+.timeline-feed {
+  display: flex;
+  flex-direction: column;
+}
+
+.timeline-item {
+  display: flex;
+  padding: var(--spacing-lg) 0;
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  margin-top: -1px; /* collapse borders */
+}
+
+.timeline-time {
+  width: 100px;
+  flex-shrink: 0;
+  font-size: 0.875rem;
+  color: #9CA3AF;
+  font-weight: 500;
+}
+
+.timeline-content {
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  line-height: 1.6;
+}

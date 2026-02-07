@@ -1,0 +1,13 @@
+.build/
+build/
+DerivedData/
+*.xcworkspace/
+*.xcodeproj/project.xcworkspace/
+.DS_Store
+*.swp
+
+# Local logs
+*.log
+
+# Local env config
+.env

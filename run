@@ -1,0 +1,76 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ROOT_DIR="$(cd "$(dirname "$0")" && pwd)"
+cd "${ROOT_DIR}"
+
+APP_NAME="OptionStatusChip"
+APP_PATH="build/${APP_NAME}.app"
+APP_BIN="${APP_PATH}/Contents/MacOS/${APP_NAME}"
+
+# Load .env automatically so commands can run without long inline env vars.
+if [[ -f .env ]]; then
+  set -a
+  # shellcheck disable=SC1091
+  source .env
+  set +a
+fi
+
+command="${1:-help}"
+
+case "${command}" in
+  build)
+    ./build.sh
+    ;;
+
+  start)
+    ./build.sh
+    open "${APP_PATH}"
+    ;;
+
+  dev)
+    ./build.sh
+    exec "${APP_BIN}"
+    ;;
+
+  test)
+    ./test.sh
+    ;;
+
+  logs)
+    tail -f ~/Library/Logs/OptionStatusChip.log
+    ;;
+
+  stop)
+    osascript -e 'tell application id "com.abcom.optionstatuschip" to quit' || true
+    pkill -x "${APP_NAME}" || true
+    ;;
+
+  clean)
+    rm -rf .build build
+    ;;
+
+  help|--help|-h)
+    cat <<USAGE
+OptionStatusChip task runner
+
+Usage:
+  ./run build    Build app bundle
+  ./run start    Build and launch app
+  ./run dev      Build and run in current terminal
+  ./run test     Run core tests
+  ./run logs     Tail app logs
+  ./run stop     Stop running app
+  ./run clean    Remove build artifacts
+
+Tip:
+  Put config in .env (see .env.example), then use ./run start without extra flags.
+USAGE
+    ;;
+
+  *)
+    echo "Unknown command: ${command}" >&2
+    echo "Run ./run help" >&2
+    exit 1
+    ;;
+esac

@@ -1,0 +1,62 @@
+:root {
+  /* Colors */
+  --bg-app: #ffffff;
+  --bg-sidebar: #F9FAFB; /* Light gray */
+  --bg-card: #FEF9C3; /* Hero card cream/yellow */
+  --bg-card-secondary: #F3F4F6;
+  --bg-trial: #ffffff;
+  --text-primary: #111827;
+  --text-secondary: #6B7280;
+  --text-purple: #7C3AED;
+  --primary: #111827;
+  --border-subtle: #E5E7EB;
+  --accent-purple: #C084FC; 
+
+  /* Typography */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Georgia', serif; /* For the "Hold fn..." text */
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 0.75rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  
+  /* Radius */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-app);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
